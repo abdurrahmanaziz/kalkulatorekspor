@@ -52,9 +52,13 @@ const Index = () => {
           />
         </div>
 
-        <h1 className="text-3xl font-bold text-center mb-8">
+        <h1 className="text-3xl font-bold text-center mb-2">
           Kalkulator Harga Jual Ekspor
         </h1>
+        
+        <p className="text-center text-gray-600 mb-8">
+          Kalkulator Harga Jual Ini Khusus Komunitas Ekspor Yuk
+        </p>
 
         <Card className="p-6">
           <div className="space-y-4">
@@ -115,7 +119,7 @@ const Index = () => {
 
             <Button
               onClick={hitungHarga}
-              className="w-full"
+              className="w-full bg-[#0449FC] hover:bg-[#0449FC]/90"
             >
               Hitung Harga Jual
             </Button>
@@ -132,6 +136,27 @@ const Index = () => {
             )}
           </div>
         </Card>
+
+        <div className="mt-8 space-y-4">
+          <div className="flex gap-4 justify-center">
+            <Button
+              className="bg-[#0449FC] hover:bg-[#0449FC]/90"
+              onClick={() => window.open("https://member.eksporyuk.com", "_blank")}
+            >
+              Login Komunitas
+            </Button>
+            <Button
+              className="bg-[#0449FC] hover:bg-[#0449FC]/90"
+              onClick={() => window.open("https://kelaseksporyuk.com", "_blank")}
+            >
+              Komunitas Ekspor Yuk
+            </Button>
+          </div>
+          
+          <p className="text-center text-gray-600 text-sm mt-8">
+            CV. EKSPOR YUK INDONESIA © 2025
+          </p>
+        </div>
       </div>
     </div>
   );
