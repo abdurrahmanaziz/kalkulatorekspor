@@ -44,6 +44,14 @@ const Index = () => {
   return (
     <div className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-2xl mx-auto">
+        <div className="flex justify-center mb-8">
+          <img
+            src="/lovable-uploads/03560cba-67cc-4dd4-bbae-4bfdc9a7777f.png"
+            alt="Ekspor Yuk Logo"
+            className="h-20 object-contain"
+          />
+        </div>
+
         <h1 className="text-3xl font-bold text-center mb-8">
           Kalkulator Harga Jual Ekspor
         </h1>
