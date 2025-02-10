@@ -11,11 +11,12 @@ const Index = () => {
   const [hargaPokok, setHargaPokok] = useState<string>("");
   const [biayaPengemasan, setBiayaPengemasan] = useState<string>("");
   const [biayaLogistik, setBiayaLogistik] = useState<string>("");
+  const [biayaLainLain, setBiayaLainLain] = useState<string>("");
   const [margin, setMargin] = useState<string>("");
   const [totalHarga, setTotalHarga] = useState<number>(0);
 
   const hitungHarga = () => {
-    if (!hargaPokok || !biayaPengemasan || !biayaLogistik || !margin) {
+    if (!hargaPokok || !biayaPengemasan || !biayaLogistik || !biayaLainLain || !margin) {
       toast({
         title: "Error",
         description: "Mohon isi semua field yang diperlukan",
@@ -24,10 +25,13 @@ const Index = () => {
       return;
     }
 
+    const biayaLainLainNominal = (parseFloat(hargaPokok) * parseFloat(biayaLainLain)) / 100;
+    
     const total =
       parseFloat(hargaPokok) +
       parseFloat(biayaPengemasan) +
       parseFloat(biayaLogistik) +
+      biayaLainLainNominal +
       (parseFloat(hargaPokok) * parseFloat(margin)) / 100;
 
     setTotalHarga(total);
@@ -76,6 +80,17 @@ const Index = () => {
                 value={biayaLogistik}
                 onChange={(e) => setBiayaLogistik(e.target.value)}
                 placeholder="Masukkan biaya logistik"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="biayaLainLain">Biaya Lain-lain (%)</Label>
+              <Input
+                id="biayaLainLain"
+                type="number"
+                value={biayaLainLain}
+                onChange={(e) => setBiayaLainLain(e.target.value)}
+                placeholder="Masukkan biaya lain-lain dalam persen"
               />
             </div>
 
