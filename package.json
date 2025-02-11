@@ -82,5 +82,6 @@
   }
 }
 "scripts": {
-  "dev": "bun run index.js"
+  "dev": "bun run index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
 }
